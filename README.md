@@ -15,7 +15,9 @@ npm install
 npm start
 ```
 
-Open http://localhost:3000. On first start the database (`data/gisthall.db`) is created and seeded with demo content.
+Open the address printed in the terminal, normally http://localhost:3000. If port 3000 is already taken by another app, Gisthall moves to 3001, 3002 and so on, and prints the port it used. To pick a port yourself: `PORT=4000 npm start`, or in PowerShell `$env:PORT=4000; npm start`.
+
+On first start the database (`data/gisthall.db`) is created and seeded with demo content.
 
 | Demo login | Username | Password |
 | --- | --- | --- |
@@ -33,7 +35,7 @@ npm test          # unit tests (node:test)
 npm run test:e2e  # Playwright end-to-end browser tests
 ```
 
-Environment variables: `PORT` (default 3000), `DB_PATH` (default `data/gisthall.db`), `FLOOD_SECONDS` (minimum gap between a member's posts, default 10), `SEED=0` (skip auto-seeding an empty DB), `SECURE_COOKIES=1` (behind HTTPS).
+Environment variables: `PORT` (fixed port, fails clearly if busy), `START_PORT` (first port tried automatically, default 3000), `DB_PATH` (default `data/gisthall.db`), `FLOOD_SECONDS` (minimum gap between a member's posts, default 10), `SEED=0` (skip auto-seeding an empty DB), `SECURE_COOKIES=1` (behind HTTPS).
 
 ## Features
 
